@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Voting System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f9ff;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #1d3557;
+    }
+
+    .voting-box {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      margin: auto;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .poll {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #457b9d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #1d3557;
+    }
+
+    .results {
+      margin-top: 30px;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .results span {
+      font-weight: bold;
+      color: #e63946;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Vote for Your Favorite Language</h1>
+
+  <div class="voting-box">
+    <div class="poll">
+      <button onclick="vote('JavaScript')">JavaScript</button>
+      <button onclick="vote('Python')">Python</button>
+      <button onclick="vote('C++')">C++</button>
+    </div>
+
+    <div class="results">
+      JavaScript: <span id="js-count">0</span><br>
+      Python: <span id="py-count">0</span><br>
+      C++: <span id="cpp-count">0</span>
+    </div>
+  </div>
+
+  <script>
+    const votes = {
+      JavaScript: 0,
+      Python: 0,
+      "C++": 0
+    };
+
+    function vote(language) {
+      votes[language]++;
+      updateVotes();
+    }
+
+    function updateVotes() {
+      document.getElementById("js-count").textContent = votes.JavaScript;
+      document.getElementById("py-count").textContent = votes.Python;
+      document.getElementById("cpp-count").textContent = votes["C++"];
+    }
+
+    setInterval(() => {
+      const languages = Object.keys(votes);
+      const randomLang = languages[Math.floor(Math.random() * languages.length)];
+      votes[randomLang]++;
+      updateVotes();
+    }, 2000);
+  </script>
+
+</body>
+</html>

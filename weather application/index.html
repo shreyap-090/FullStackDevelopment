@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Weather App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+      background-color: #d0f0c0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 320px;
+    }
+
+    h2 {
+      color: #2e8b57;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 90%;
+      border: 2px solid #2e8b57;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #1c5e3b;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Weather App</h2>
+    <input type="text" id="cityInput" placeholder="Enter City Name">
+    <br>
+    <button id="getWeatherBtn">Get Weather</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const weatherData = {
+      "Ahmedabad": "40°C",
+      "Surat": "36°C",
+      "Vadodara": "37°C",
+      "Rajkot": "39°C",
+      "Bhavnagar": "38°C"
+    };
+
+    document.getElementById("getWeatherBtn").addEventListener("click", () => {
+      const city = document.getElementById("cityInput").value.trim();
+      const result = document.getElementById("result");
+
+      if (weatherData[city]) {
+        result.textContent = `The weather in ${city} is ${weatherData[city]}`;
+      } else {
+        result.textContent = "Weather data not found for this city.";
+      }
+    });
+  </script>
+
+</body>
+</html>
