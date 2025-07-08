@@ -1,0 +1,61 @@
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  background: #1e1f26;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.display {
+  background: #282c34;
+  color: #00ffab;
+  font-size: 2rem;
+  padding: 20px;
+  text-align: right;
+  min-width: 300px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 20px;
+  background: #333;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #444;
+}
+
+button.operator {
+  background: #f78fb3;
+  color: #fff;
+}
+
+button.equals {
+  background: #32ff7e;
+  color: #000;
+  grid-column: span 2;
+}
+
+button.del {
+  background: #ff4d4d;
+  color: white;
+}
