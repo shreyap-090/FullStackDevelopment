@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #ffc1e3, #f8bbd0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #e91e63;
+  font-weight: 600;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #f06292;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  background-color: #ec407a;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #d81b60;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  background: #fce4ec;
+  color: #880e4f;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions button {
+  margin-left: 8px;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #c2185b;
+}
+
+.actions button:hover {
+  color: #ad1457;
+}
